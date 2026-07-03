@@ -1,98 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-}
-
-.login-box{
-    width:350px;
-    background:#fff;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 10px 25px rgba(0,0,0,.3);
-}
-
-.login-box h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-input{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:5px;
-    font-size:16px;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    background:#007BFF;
-    color:white;
-    border:none;
-    border-radius:5px;
-    font-size:16px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#0056b3;
-}
-
-#message{
-    margin-top:15px;
-    text-align:center;
-    color:green;
-}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formspree Demo</title>
+  <style>
+    body{
+      font-family:Arial,sans-serif;
+      background:#f4f4f4;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .box{
+      background:#fff;
+      padding:25px;
+      border-radius:10px;
+      width:320px;
+      box-shadow:0 5px 15px rgba(0,0,0,.2);
+    }
+    input, textarea{
+      width:100%;
+      padding:10px;
+      margin:10px 0;
+    }
+    button{
+      width:100%;
+      padding:10px;
+      cursor:pointer;
+    }
+  </style>
 </head>
 <body>
 
-<div class="login-box">
+<div class="box">
+  <h2>Formspree Demo</h2>
 
-<h2>Login</h2>
+  <form action="https://formspree.io/f/xgojpbdg" method="POST">
+    <input type="text" name="Username" placeholder="Enter Username" required>
 
-<form id="loginForm">
-    <input type="text" id="username" placeholder="Username" required>
-    <input type="password" id="password" placeholder="Password" required>
+    <textarea name="Message" placeholder="Type any message..." required></textarea>
 
-    <button type="submit">Login</button>
-</form>
-
-<p id="message"></p>
-
+    <button type="submit">Submit</button>
+  </form>
 </div>
 
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const username = document.getElementById("username").value;
-
-    document.getElementById("message").innerHTML =
-        "Welcome, " + username + "! (Demo only)";
-});
-</script>
-
 </body>
+</html>
 </html>
